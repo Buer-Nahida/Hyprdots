@@ -1,2 +1,7 @@
-# Hyprdots
-✨ My Hyprland Configure Files ✨
+<div align="justify">
+
+<div align="center">
+
+```ocaml
+ ✨ Star Hyprland ✨
+```
