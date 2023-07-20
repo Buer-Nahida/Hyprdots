@@ -1,0 +1,167 @@
+[{
+  "include": "~/.config/waybar/custom_modules/modules",
+  "layer": "top",
+  "height": 30,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-bottom": -7,
+  "margin-right": 0,
+  "spacing": 0,
+
+"cava": {
+        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 60,
+        "autosens": 1,
+        "sensitivity": 100,
+        "bars": 14,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    },
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "format-active": "{icon}",
+				"on-click": "activate",
+				"format-icons": {
+							"urgent": "!",
+		          "active": "●",
+							"default": "○",
+			  },
+        //     "10":"10"
+        // }
+    },
+
+  "modules-left": [
+    "wlr/workspaces",
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+        "pulseaudio",
+        "battery",
+  ],
+
+  "clock": {
+    "format": "<b>{:%Y年%m月%d日 %H:%M:%S %A}</b>",
+    "interval": 1,
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "backlight": {
+    "device": "amdgpu_bl1",
+    "format": "{icon} <b>{percent}</b>",
+    "tooltip": false,
+    "format-icons": ["", "", ""]
+  },
+
+  "pulseaudio": {
+    "format": "<b> {volume}</b>",
+    "format-bluetooth": "<b> 󰂯{volume}</b>",
+    "format-bluetooth-muted": "<b>󰂲 {volume}</b>",
+    "tooltip": false,
+    "format-muted": "<b> 󰝟 {volume}</b>",
+    "on-click": "pavucontrol"
+  }
+}, 
+
+{
+  "include": "~/.config/waybar/custom_modules/modules",
+  "layer": "top",
+  "position": "bottom",
+  "height": 20,
+  "margin-top": -14,
+  "margin-left": 0,
+  "margin-bottom": 0,
+  "margin-right": 0,
+  "spacing": 0,
+
+  "modules-left": [
+  	"memory",
+    "cpu",
+    "temperature",
+  ],
+
+  "modules-center": [
+    "custom/media-control"
+  ],
+
+  "modules-right": [
+    "tray"
+  ],
+
+  "cpu": {
+    "interval": 1,
+    "format": " <b>{usage}%</b>",
+  },
+
+  "memory": {
+    "interval": 1,
+    "format": " <b>{}%</b>",
+    "format-alt": " <b>{used}GiB</b>",
+  },
+
+  "temperature": {
+    "interval": 1,
+    "thermal-zone": 0,
+    "critical-threshold": 80,
+    "format-critical": " {temperatureC}°C</b>",
+    "format": " <b>{temperatureC}°C</b>"
+  },
+
+"wlr/workspaces": {
+	"format": "{icon}{name}",
+	"format-icons": {
+		"active": "●",
+		"default": "○"
+	},
+},
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "interval": 30,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<b>{icon} {capacity}%</b>",
+    "format-charging": "<b>{icon}⚡{capacity}%</b>",
+    "format-icons": [" ", " ", " ", " "],
+    "max-length": 25,
+    "tooltip": false
+  },
+
+  "network": {
+    "format-wifi": "<b> {essid}</b>",
+    "format-ethernet": "",
+    "tooltip": false,
+    "on-click": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh", 
+    "format-disconnected": "<b><󱚼/b>"
+  },
+
+  "bluetooth": {
+    "format": "<b></b>",
+    "format-connected": "<b> {device_alias}</b>",
+    "format-disabled": "<b></b>",
+    "interval": 30,
+    "on-click" : "blueman-manager",
+    "tooltip": false,
+    }
+
+}]

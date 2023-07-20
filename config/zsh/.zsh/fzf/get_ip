@@ -1,0 +1,12 @@
+#!/bin/bash
+# 本脚本用于将用户选择的网卡对应ip复制到剪切板
+ip addr | grep "^[0-9]:" | cut -d" " -f 2 | sed 's/://' | fzf | xclip
+interface=`xclip -o`
+ip=`ip addr show $interface | awk '/inet / {print $2}' | awk -F'/' '{print $1}' | tr -d '\n'`
+if [ -z "$ip" ]
+then
+	echo "该网卡未分配ip地址"
+else
+	echo $ip |xclip -selection clipboard
+	echo "已复制$interface的ip地址$ip到剪切板"
+fi

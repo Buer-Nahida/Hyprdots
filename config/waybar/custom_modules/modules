@@ -1,0 +1,33 @@
+{
+  "include": "$HOME/.config/waybar/custom_modules/privacy_container",
+
+  "custom/launcher": {
+    "format": "",
+    "on-click": "wofi --show drun"
+  },
+
+  "custom/pacman-update": {
+    "format": " <b>{}</b>",
+    "interval": 3600,
+    "exec": "~/.config/waybar/scripts/checkupdates | wc -l",
+    "signal": 8
+  },
+
+  "custom/power-menu": {
+    "format": "⏻",
+    "on-click": "bash ~/.config/waybar/scripts/power-menu/powermenu.sh &"
+  },
+
+  "custom/media-control": {
+    "format": "{}",
+    "return-type": "json",
+    "format-icons": {
+        "spotify": "",
+        "default": ""
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
+    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+  }
+
+}
