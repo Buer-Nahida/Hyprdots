@@ -45,6 +45,7 @@ yay -S hyprland wlroots xdg-desktop-portal-hyprland xorg-xwayland \
         neofetch \
         light \
         libnotify \
+        bottom
 ```
 </details>
 
