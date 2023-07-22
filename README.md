@@ -7,12 +7,12 @@
 ```
 
 <p align="center">
-  <img = src="https://img.shields.io/badge/OS-Linux-FCC624?style=for-the-badge&logo=linux&logoColor=yelow"/>
-	<img src="https://img.shields.io/badge/Style-CSS-blue?style=for-the-badg&logo=css3&logoColor=blue"/>
-  <img src="https://img.shields.io/github/stars/SR-MyStar/Hyprdots?&style=for-the-badge&logoColor=red" />
-  <img src="https://img.shields.io/github/forks/SR-MyStar/Hyprdots?style=for-the-badge" />
-  <img src="https://img.shields.io/github/issues/SR-MyStar/Hyprdots?style=for-the-badge" />
-  <img src='https://img.shields.io/github/license/SR-MyStar/Hyprdots?style=for-the-badge&logo=GNU&label=License&color=bd0000&logoColor=white'/>
+  <img src="https://img.shields.io/badge/OS-Arch-f7768e?style=for-the-badge&logo=archlinux&logoColor=f7768e"/>
+  <img src="https://img.shields.io/badge/Style-SHELL-9ece6a?style=for-the-badge&logo=gnubash&logoColor=9ece6a"/>
+  <img src="https://img.shields.io/github/stars/SR-MyStar/Hyprdots?style=for-the-badge&logo=apachespark&logoColor=e0af68&color=e0af68" />
+  <img src="https://img.shields.io/github/forks/SR-MyStar/Hyprdots?style=for-the-badge&logo=git&logoColor=7aa2f7&color=7aa2f7" />
+  <img src="https://img.shields.io/github/issues/SR-MyStar/Hyprdots?style=for-the-badge&logo=cachet&logoColor=bb9af7&color=bb9af7" />
+  <img src='https://img.shields.io/github/license/SR-MyStar/Hyprdots?style=for-the-badge&logo=GNU&label=License&color=7dcfff&logoColor=7dcfff'/>
 </p>
 
 # Gallery
@@ -20,8 +20,13 @@
 ![2023-07-20-07-23-00](https://github.com/SR-MyStar/Hyprdots/assets/139795416/4d68abb3-009a-449e-b1f9-c81248d38bc2)
 ![2023-07-20-07-23-51](https://github.com/SR-MyStar/Hyprdots/assets/139795416/8c327926-648d-476d-9acb-3b904c7e3535)
 ![2023-07-20-07-24-24](https://github.com/SR-MyStar/Hyprdots/assets/139795416/76742143-ad6e-4533-9f83-8ed66d47285d)
+</div>
+
+<div align="center">
 
 # Install
+
+</div>
 
 <details>
 <summary><b>1. Install packages</b></summary>
@@ -80,13 +85,20 @@ cd hyprdots
 chmod +x ./install.sh
 ./install.sh
 ```
+
+<div align="center">
+
 # Don't removed ~/.hyprdots directory!!!
+
+</div>
 
 </details>
 
 <details>
 <summary><b>4. Install themes</b></summary>
+
 Install Tokyonight gtk theme
+
 ```Bash
 git clone https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme.git
 cd Tokyo-Night-GTK-Theme/
