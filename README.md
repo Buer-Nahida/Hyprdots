@@ -14,4 +14,52 @@
 # Install
 
 <details>
-<summary><b>Install Core</b></summary>
+<summary><b>1. Install packages</b></summary>
+
+```Bash
+yay -S hyprland wlroots xdg-desktop-portal-hyprland xorg-xwayland \ 
+        waybar-mpris-git waybar-hyprland-git \
+        firefox \
+        mpv mpvpaper \
+        wf-recorder \
+        zsh \
+        wezterm \
+        wlogout \
+        dunst \
+        fcitx5 \
+        xfce-polkit \
+        cava \
+        python rust \
+        grim slurp \
+        jq \
+        wl-clipboard \
+        rofi \
+        lolcat \
+        nemo \
+        fortune-mod fortune-mod-zh \
+        pipewire pipewire-alsa pipewire-docs pipewire-jack pipewire-pulse pipewire-roc pipewire-x11-bell pipewire-zeroconf \
+        highlight \
+        exa \
+        vim \
+        cowsay \
+        neofetch \
+        light \
+        libnotify \
+```
+</details>
+
+<details>
+<summary><b>2. Install configure files</b></summary>
+
+```Bash
+cd ~
+git clone https://github.com/SR-MyStar/Hyprdots.git .hyprdots
+cd hyprdots
+chmod +x ./install.sh
+./install.sh
+```
+# Don't removed ~/.hyprdots directory!!!
+
+</details>
+
+[![Star History Chart](https://api.star-history.com/svg?repos=SR-MyStar/Hyprdots&type=Date)](https://star-history.com/#guodongxiaren/README&Date)
