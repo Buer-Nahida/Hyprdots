@@ -1,0 +1,2 @@
+notify-send "$(crow -b "$(wl-paste -p)")"
+crow -u "$(wl-paste -p)"

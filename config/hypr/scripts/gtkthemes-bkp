@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+
+## Set GTK Themes, Icons, Cursor and Fonts
+
+THEME='Tokyonight-Dark-BL'
+ICONS='Papirus-Dark'
+FONT='方正兰亭圆_GBK_中粗 11'
+CURSOR='Catppuccin-Mocha-Blue-Cursors'
+CUROSO_SIZE='36'
+
+SCHEMA='gsettings set org.gnome.desktop.interface'
+
+apply_themes() {
+	${SCHEMA} gtk-theme "$THEME"
+	${SCHEMA} icon-theme "$ICONS"
+	${SCHEMA} cursor-theme "$CURSOR"
+	${SCHEMA} font-name "$FONT"
+	${SCHEMA} cursor-size "$CUROSO_SIZE"
+}
+
+apply_themes
