@@ -95,9 +95,9 @@ chmod +x ./install.sh
 </details>
 
 <details>
-<summary><b>4. Install themes</b></summary>
+<summary><b>4. Install & Apply themes</b></summary>
 
-# Install Tokyonight gtk theme
+## Install Tokyonight gtk theme
 
 ```Bash
 git clone https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme.git
@@ -119,10 +119,10 @@ yay -S catppuccin-cursors-mocha
 yay -S papirus-folders
 ```
 
-</details>
-
-# Apply themes
+## Apply themes
 
 ```Bash
 ~/.config/hypr/scripts/gtkthemes-bkp
 ```
+
+</details>
