@@ -60,9 +60,10 @@ yay -S hyprland wlroots xdg-desktop-portal-hyprland xorg-xwayland \
         neofetch \
         light \
         libnotify \
-        bottom \
+        bottom btop \
         gtk-engine-murrine \
         gnome-themes-extra lib32-gnome-themes-extra \
+        crow-translate \
 ```
 </details>
 
