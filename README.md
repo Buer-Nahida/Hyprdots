@@ -33,7 +33,7 @@
 
 ```Bash
 yay -S hyprland wlroots xdg-desktop-portal-hyprland xorg-xwayland \ 
-        waybar-mpris-git waybar-hyprland-git \
+        waybar-mpris-git waybar-hyprland-git hyprpicker \
         firefox \
         mpv mpvpaper \
         wf-recorder \
@@ -67,7 +67,7 @@ yay -S hyprland wlroots xdg-desktop-portal-hyprland xorg-xwayland \
 </details>
 
 <details>
-<summary><b>2. Install fonts</b></summary>
+<summary><b>2. Install nerd-fonts</b></summary>
 
 ```Bash
 yay -S nerd-fonts-git
@@ -76,7 +76,7 @@ yay -S nerd-fonts-git
 </details>
 
 <details>
-<summary><b>3. Install configure files</b></summary>
+<summary><b>3. Install Hyprdots</b></summary>
 
 ```Bash
 cd ~
@@ -97,7 +97,7 @@ chmod +x ./install.sh
 <details>
 <summary><b>4. Install themes</b></summary>
 
-Install Tokyonight gtk theme
+# Install Tokyonight gtk theme
 
 ```Bash
 git clone https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme.git
@@ -105,4 +105,24 @@ cd Tokyo-Night-GTK-Theme/
 sudo mv themes/ /usr/share/themes/
 cd ..
 rm -rv Tokyo-Night-GTK-Theme
+```
+
+## Install Cursor theme
+
+```Bash
+yay -S catppuccin-cursors-mocha
+```
+
+## Install icon theme
+
+```Bash
+yay -S papirus-folders
+```
+
+</details>
+
+# Apply themes
+
+```Bash
+~/.hyprdots/config/hypr/scp
 ```
