@@ -61,5 +61,3 @@ chmod +x ./install.sh
 # Don't removed ~/.hyprdots directory!!!
 
 </details>
-
-[![Star History Chart](https://api.star-history.com/svg?repos=SR-MyStar/Hyprdots&type=Date)](https://star-history.com/#guodongxiaren/README&Date)
