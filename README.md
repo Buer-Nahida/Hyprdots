@@ -124,5 +124,5 @@ yay -S papirus-folders
 # Apply themes
 
 ```Bash
-~/.hyprdots/config/hypr/scp
+~/.config/hypr/scripts/gtkthemes-bkp
 ```
