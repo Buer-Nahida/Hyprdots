@@ -2,14 +2,14 @@
 
 DOTS=$(pwd)
 
-1_make_home_dir()
+make_home_dir()
 {
     mkdir "$1"/.config || true
     mkdir "$1"/.cache || true
     mkdir -p "$1"/.local/share/fonts || true
 }
 
-1_backup()
+back_up()
 {
   echo "\e[32mBakuping configures..."
   mkdir $HOME/.oldconfig
@@ -27,7 +27,7 @@ DOTS=$(pwd)
 
 
 echo "\e[32mPreparing stuff..."
-1_make_home_dir ${HOME} 2> /dev/null
+make_home_dir ${HOME} 2> /dev/null
 echo "\e[32mDone"
 
 echo "\e[31mWARNING: Is the hyprdots folder at \e[33m$(pwd)? \e[32m(y/N)"
@@ -44,14 +44,14 @@ if [[ "$input" == "y" ]] || [[ "$input" == "Y" ]]
           then
             rm -rf "$HOME/.oldconfig"
             echo "\e[32mRedoing directory tree..."
-            1_backup
+            back_up
           else
             echo "\e[31mDelete \e[33m$HOME/.oldconfig \e[31mmanually before installing"
             echo "\e[32mInstallation aborted"
             exit
             fi;
   else
-    1_backup
+    back_up
 fi;
 
 echo "\e[32mInstall fonts..."
