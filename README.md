@@ -128,11 +128,6 @@ yay -S papirus-folders
 
 </details>
 
-<details>
-<summary><b>5. Install zsh configure</b></summary>
-
-```Bash
-bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 ```
 
 </details>
