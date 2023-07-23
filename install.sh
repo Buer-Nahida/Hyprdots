@@ -13,11 +13,15 @@ DOTS=$(pwd)
 {
   echo "\e[32mBakuping configures..."
   mkdir $HOME/.oldconfig
-  mv -v $HOME/.config/{bat,btop,cava,dunst,fcitx5,hypr,nemo,neofetch,rofi,waybar,wezterm,wlogout,zsh} $HOME/.oldconfig
+  mv -v $HOME/.config/{bat,btop,cava,dunst,fcitx5,hypr,nemo,neofetch,rofi,waybar,wezterm,wlogout,zsh} $HOME/.oldconfig/
 
   echo "\e[32mBakuping local files..."
   mkdir $HOME/.oldconfig/local
-  mv -v $HOME/.local/share/{rofi,fcitx5} $HOME/.oldconfig/local
+  mv -v $HOME/.local/share/{rofi,fcitx5} $HOME/.oldconfig/local/
+
+  echo "\e[32mBakuping zsh configures..."
+  mv -v $HOME/{.zshenv,.zsh_history,.p10k.zsh} $HOME/.oldconfig/
+
   echo "\e[32mDone, you can find your backups at \e[33m$HOME/.oldconfig"
 }
 
@@ -51,15 +55,20 @@ if [[ "$input" == "y" ]] || [[ "$input" == "Y" ]]
 fi;
 
 echo "\e[32mInstall fonts..."
-ln -s $DOTS/local/fonts $HOME/.local/share/fonts/10_hyprdots_fonts
+ln -sv $DOTS/local/fonts $HOME/.local/share/fonts/10_hyprdots_fonts
 echo "\e[32mDone"
 
 echo "\e[32mInstall Configures..."
-ln -s $DOTS/config/{bat,btop,cava,dunst,fcitx5,hypr,nemo,neofetch,rofi,waybar,wezterm,wlogout,zsh} $HOME/.config/
+ln -sv $DOTS/config/{bat,btop,cava,dunst,fcitx5,hypr,nemo,neofetch,rofi,waybar,wezterm,wlogout,zsh} $HOME/.config/
 echo "\e[32mDone"
 
 echo "\e[32mInstall local files..."
-ln -s $DOTS/local/{rofi,fcitx5} $HOME/.local/share/
+ln -sv $DOTS/local/{rofi,fcitx5} $HOME/.local/share/
+echo "\e[32mDone"
+
+echo "\e[32mInstall zsh configures"
+ln -sv $DOTS/{.zshenv,.zsh_history} $HOME/
+ln -sv $HOME/.config/zsh/.p10k.zsh $HOME/.p10k.zsh
 echo "\e[32mDone"
 
 echo "\e[32mInstall finished"
