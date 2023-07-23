@@ -82,7 +82,7 @@ yay -S nerd-fonts-git
 ```Bash
 cd ~
 git clone https://github.com/SR-MyStar/Hyprdots.git .hyprdots
-cd hyprdots
+cd .hyprdots
 chmod +x ./install.sh
 ./install.sh
 ```
