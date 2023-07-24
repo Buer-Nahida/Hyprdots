@@ -64,6 +64,7 @@ yay -S hyprland wlroots xdg-desktop-portal-hyprland xorg-xwayland \
         gtk-engine-murrine \
         gnome-themes-extra lib32-gnome-themes-extra \
         crow-translate \
+        python python3
 ```
 </details>
 
