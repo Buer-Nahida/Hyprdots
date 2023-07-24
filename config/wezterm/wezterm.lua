@@ -3,7 +3,6 @@ local wezterm = require("wezterm")
 local function font_with_fallback(name, params)
 	local names = {
 		name,
-		"Material Design Icons",
 		"Apple Color Emoji",
 		"azuki_font",
 		"FZLanTingYuan-DB-GBK",
