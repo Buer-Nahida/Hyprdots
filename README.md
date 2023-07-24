@@ -125,9 +125,5 @@ yay -S papirus-folders
 ```Bash
 ~/.config/hypr/scripts/gtkthemes-bkp
 ```
-</details>
-
-```
 
 </details>
-
