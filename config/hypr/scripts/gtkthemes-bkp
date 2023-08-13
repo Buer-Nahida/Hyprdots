@@ -7,7 +7,7 @@
 THEME='Tokyonight-Dark-BL'
 ICONS='Papirus-Dark'
 FONT='方正兰亭圆_GBK_中粗 11'
-CURSOR='Catppuccin-Mocha-Blue-Cursors'
+CURSOR='Catppuccin-Mocha-Flamingo-Cursors'
 CUROSO_SIZE='36'
 
 SCHEMA='gsettings set org.gnome.desktop.interface'

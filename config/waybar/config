@@ -37,7 +37,8 @@
   "clock": {
     "format": "<b>{:%Y年%m月%d日 %H:%M:%S %A}</b>",
     "interval": 1,
-    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "~/.config/hypr/scripts/exa cycle"
   },
 
   "backlight": {

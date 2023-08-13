@@ -11,25 +11,31 @@ window#waybar {
 
 #custom-launcher {
   font-size: 20px;
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
   padding: 0px 12px 0px 4px;
   margin: 0px;
 }
 
 #cpu {
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
 }
 
 #memory {
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
 }
 
 #temperature {
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
+}
+
+#custom-pacman-update {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  margin: 0px 0px 0px 10px;
 }
 
 #workspaces{
@@ -39,7 +45,7 @@ window#waybar {
 }
 
 #workspaces button{
-    color: #1E2030;
+    color: #FFFFFF;
     background: rgba(0,0,0,0);
     padding: 0px 0px 0px 0px;
     font-size: 20;
@@ -47,42 +53,42 @@ window#waybar {
 
 #window {
   background: rgba(0,0,0,0);
-  color: #1E2030;
+  color: #FFFFFF;
 }
 
 #workspaces button.active{
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
   padding: 0px 0px 0px 0px;
   font-size: 20;
 }
 
 #battery {
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
   margin: 0px 5px 0px 5px;
 }
 
 #backlight {
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
   margin: 0px 5px 0px 0px;
 }
 
 #pulseaudio {
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
   margin: 0px 5px 0px 0px;
 }
 
 #network {
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
   margin: 0px 0px 0px 0px;
 }
 
 #clock {
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
   margin: 0px 5px 0px 0px;
 }
@@ -109,14 +115,21 @@ window#waybar {
     font-size: 16px;
 }
 
+#custom-power-menu {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  margin: 0px 0px 0px 5px;
+  padding: 0px 12px 0px 10px
+}
+
 #cava {
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
   font-family: "3270 Nerd Font Mono";
 }
 
 #bluetooth {
-  color: #1E2030;
+  color: #FFFFFF;
   background: rgba(0,0,0,0);
   margin: 0px 5px 0px 0px;
 }

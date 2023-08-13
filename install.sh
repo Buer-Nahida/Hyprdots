@@ -8,7 +8,7 @@ make_home_dir() {
 	mkdir -p "$1"/.local/share/fonts || true
 }
 
-back_up() {
+back_up_configure() {
 	echo "\e[32mBakuping configures..."
 	mkdir $HOME/.oldconfig
 	mv -v $HOME/.config/{bat,btop,cava,dunst,fcitx5,hypr,nemo,neofetch,rofi,waybar,wezterm,wlogout,zsh} $HOME/.oldconfig/
@@ -38,7 +38,7 @@ if [[ "$input" == "y" ]] || [[ "$input" == "Y" ]]; then
 		if [[ "$input" == "y" ]] || [[ "$input" == "Y" ]]; then
 			rm -rf "$HOME/.oldconfig"
 			echo "\e[32mRedoing directory tree..."
-			back_up
+      back_up_configure
 		else
 			echo "\e[31mDelete \e[33m$HOME/.oldconfig \e[31mmanually before installing"
 			echo "\e[32mInstallation aborted"

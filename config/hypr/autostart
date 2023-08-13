@@ -5,7 +5,7 @@ config=$HOME/.config/hypr
 scripts=$config/scripts
 
 # Cursor
-hyprctl setcursor "Catppuccin-Mocha-Blue-Cursors" 36
+hyprctl setcursor "Catppuccin-Mocha-Flamingo-Cursors" 36
 #hyprctl setcursor oreo_spark_light_pink_cursors 24
 # notification daemon
 dunst &
@@ -13,13 +13,11 @@ dunst &
 fcitx5 -d &
 
 # waybar
-~/.config/hypr/scripts/waybar.sh &
+$scripts/waybar.sh &
 
 # wallpaper
-mpvpaper HDMI-A-1 -p -s ~/.config/hypr/wallpaper/chino.mp4 -o " --loop --no-audio " -f &
-
-# effects
-$scripts/rgb &
+#mpvpaper HDMI-A-1 -p -s ~/.config/hypr/wallpaper/chino.mp4 -o " --loop --no-audio " -f &
+$scripts/wall $config/wallpaper/0.png
 
 # other
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
