@@ -33,7 +33,7 @@
 
 ```Bash
 yay -S hyprland wlroots xdg-desktop-portal-hyprland xorg-xwayland \ 
-        waybar-mpris-git waybar-hyprland-git hyprpicker \
+        waybar-mpris-git waybar-hyprland-cava-git hyprpicker \
         firefox \
         mpv mpvpaper swww \
         wf-recorder \
