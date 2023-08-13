@@ -35,7 +35,7 @@
 yay -S hyprland wlroots xdg-desktop-portal-hyprland xorg-xwayland \ 
         waybar-mpris-git waybar-hyprland-git hyprpicker \
         firefox \
-        mpv mpvpaper \
+        mpv mpvpaper swww \
         wf-recorder \
         zsh \
         wezterm \
