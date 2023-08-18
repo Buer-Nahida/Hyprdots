@@ -56,8 +56,9 @@ if [[ "$input" == "y" ]] || [[ "$input" == "Y" ]]; then
 	ln -sv $DOTS/config/{bat,btop,cava,dunst,fcitx5,hypr,mpd,ncmpcpp,nemo,neofetch,rofi,waybar,wezterm,zsh} $HOME/.config/
 	echo "\e[32mDone"
 
-  echo "\e[32m(root)Install MediaControl script..."
-  sudo cp ./MediaControl /usr/bin/
+	echo "\e[32m(root)Install MediaControl script..."
+ 	sudo cp ./MediaControl /usr/bin/
+  	sudo chmod +x /usr/bin/MediaControl
 	echo "\e[32mDone"
 
 	echo "\e[32mInstall local files..."
