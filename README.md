@@ -16,7 +16,11 @@
 </p>
 
 # Gallery
-
+![2023-08-19-05-35-02-full](https://github.com/SR-MyStar/Hyprdots/assets/139795416/d274043e-db40-4aa5-b6a4-1357b47f097d)
+![2023-08-19-05-36-05-full](https://github.com/SR-MyStar/Hyprdots/assets/139795416/6fa1ba3b-febf-4a97-bfbb-bdd454ef914b)
+![2023-08-19-05-36-27-full](https://github.com/SR-MyStar/Hyprdots/assets/139795416/8ef37ba7-ccb1-4193-ae1e-14b2500c1628)
+![2023-08-19-05-36-35-full](https://github.com/SR-MyStar/Hyprdots/assets/139795416/109aa220-785f-4fec-b7e8-b1e6c67ef073)
+![2023-08-19-05-37-22-full](https://github.com/SR-MyStar/Hyprdots/assets/139795416/9632b378-f866-4181-887a-150614d580c9)
 </div>
 
 <div align="center">
