@@ -81,6 +81,11 @@ yay -S nerd-fonts-git
 
 </details>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/-WARING!!!-f7768e?style=for-the-badge&logoColor=f7768e"/>
+  <img src="https://img.shields.io/badge/-If you installed main1.0 version dot,must remove all old's configs!!!-f7768e?style=for-the-badge&logoColor=f7768e"/>
+</p>
+
 <details>
 <summary><b>3. Install Hyprdots</b></summary>
 
