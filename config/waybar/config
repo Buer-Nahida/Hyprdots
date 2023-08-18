@@ -1,5 +1,4 @@
 [{
-  "include": "~/.config/waybar/custom_modules/modules",
   "layer": "top",
   "height": 33,
   "margin-top": 0,
@@ -38,7 +37,7 @@
     "format": "<b>{:%Y年%m月%d日 %H:%M:%S %A}</b>",
     "interval": 1,
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "~/.config/hypr/scripts/exa cycle"
+    "on-click": "~/.config/hypr/scripts/waybar/cycle.sh"
   },
 
   "backlight": {
@@ -59,7 +58,6 @@
 }, 
 
 {
-  "include": "~/.config/waybar/custom_modules/modules",
   "layer": "top",
   "position": "bottom",
   "height": 20,

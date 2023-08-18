@@ -11,11 +11,11 @@ make_home_dir() {
 back_up_configure() {
 	echo "\e[32mBakuping configures..."
 	mkdir $HOME/.oldconfig
-	mv -v $HOME/.config/{bat,btop,cava,dunst,fcitx5,hypr,nemo,neofetch,rofi,waybar,wezterm,wlogout,zsh} $HOME/.oldconfig/
+	mv -v $HOME/.config/{bat,btop,cava,dunst,fcitx5,hypr,mpd,ncmpcpp,nemo,neofetch,rofi,waybar,wezterm,zsh} $HOME/.oldconfig/
 
 	echo "\e[32mBakuping local files..."
 	mkdir $HOME/.oldconfig/local
-	mv -v $HOME/.local/share/{rofi,fcitx5} $HOME/.oldconfig/local/
+	mv -v $HOME/.local/share/fcitx5 $HOME/.oldconfig/local/
 
 	echo "\e[32mBakuping zsh configures..."
 	mv -v $HOME/{.zshenv,.zsh_history,.p10k.zsh} $HOME/.oldconfig/
@@ -53,11 +53,11 @@ if [[ "$input" == "y" ]] || [[ "$input" == "Y" ]]; then
 	echo "\e[32mDone"
 
 	echo "\e[32mInstall Configures..."
-	ln -sv $DOTS/config/{bat,btop,cava,dunst,fcitx5,hypr,nemo,neofetch,rofi,waybar,wezterm,wlogout,zsh} $HOME/.config/
+	ln -sv $DOTS/config/{bat,btop,cava,dunst,fcitx5,hypr,mpd,ncmpcpp,nemo,neofetch,rofi,waybar,wezterm,zsh} $HOME/.config/
 	echo "\e[32mDone"
 
 	echo "\e[32mInstall local files..."
-	ln -sv $DOTS/local/{rofi,fcitx5} $HOME/.local/share/
+	ln -sv $DOTS/local/fcitx5 $HOME/.local/share/
 	echo "\e[32mDone"
 
 	echo "\e[32mInstall zsh configures"

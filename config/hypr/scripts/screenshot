@@ -1,4 +1,0 @@
-#!/bin/bash
-grim -c -t png -l 0 ~/Pictures/Screenshots/$(date "+%Y-%m-%d-%H-%M-%S").png
-wl-copy <~/Pictures/Screenshots/$(date "+%Y-%m-%d-%H-%M-%S").png
-notify-send -h string:x-canonical-private-synchronous:sys-notify -i ~/Pictures/Screenshots/$(date "+%Y-%m-%d-%H-%M-%S").png "$(python3 ~/.config/hypr/scripts/ramdomtext.py)"
