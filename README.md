@@ -65,7 +65,9 @@ yay -S hyprland wlroots xdg-desktop-portal-hyprland xorg-xwayland \
         gnome-themes-extra lib32-gnome-themes-extra \
         crow-translate \
         python python3 \
-        catppuccin-mocha-dark-cursors
+        catppuccin-mocha-dark-cursors \
+        mpd ncmpcpp \
+        slurp        
 ```
 </details>
 
