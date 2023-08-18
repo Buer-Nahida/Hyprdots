@@ -1,5 +1,17 @@
 #fortune随机诗词
-fortune -e tang300 song100|lolcat
+fortune -e tang300 song100>/tmp/zshinfo
+echo "┏━━━━━━━━━━┳━━━━━━━━┓
+┃ 类名     ┃ 大驼峰 ┃
+┣━━━━━━━━━━╋━━━━━━━━┫
+┃ 函数名   ┃ 大驼峰 ┃
+┣━━━━━━━━━━╋━━━━━━━━┫
+┃ 变量名   ┃ 小驼峰 ┃
+┣━━━━━━━━━━╋━━━━━━━━┫
+┃ 属性名   ┃ 大驼峰 ┃
+┣━━━━━━━━━━╋━━━━━━━━┫
+┃ 命名空间 ┃ 大驼峰 ┃
+┗━━━━━━━━━━┻━━━━━━━━┛">>/tmp/zshinfo
+cat /tmp/zshinfo|lolcat
 
 # 该zsh配置文件使用zinit进行插件管理
 
@@ -137,7 +149,6 @@ export dirs="~/MyTools/resources/dir.list"
 # fi
 # eval "$(pyenv virtualenv-init -)"
 
-alias cman='man -M /usr/share/man/zh_CN'
 alias e='nvim'
 alias sudovim='sudoedit'
 alias vizsh="vim $HOME/.zshrc"
@@ -157,6 +168,8 @@ alias la='exa -a --icons -h'
 alias	grep="grep --color=auto"
 alias	diff="diff --color=auto"
 alias ccat="highlight --out-format=ansi"
-alias ssh="kitty +kitten ssh"
 export POWERLEVEL9K_CONFIG_FILE="$HOME/.config/zsh/.p10k.zsh"
+alias music='tmux new-session -s $$ "tmux source-file ~/.ncmpcpp/tsession"'
+_trap_exit() { tmux kill-session -t $$; }
+export MUSIC_DIR=/music
 

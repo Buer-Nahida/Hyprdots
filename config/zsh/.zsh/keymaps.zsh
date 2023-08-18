@@ -1,5 +1,7 @@
 bindkey "^@" set-mark-command
 
+bindkey "^l" forward-char
+bindkey "^h" backward-char
 # 其他快捷键
 bindkey "^K" kill-line # 删除光标到结尾
 bindkey "^L" clear-screen # 清屏

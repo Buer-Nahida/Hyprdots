@@ -18,7 +18,7 @@ back_up_configure() {
 	mv -v $HOME/.local/share/fcitx5 $HOME/.oldconfig/local/
 
 	echo "\e[32mBakuping zsh configures..."
-	mv -v $HOME/{.zshenv,.zsh_history,.p10k.zsh} $HOME/.oldconfig/
+	mv -v $HOME/{.zshenv,.p10k.zsh} $HOME/.oldconfig/
 
 	echo "\e[32mDone, you can find your backups at \e[33m$HOME/.oldconfig"
 }
@@ -66,7 +66,7 @@ if [[ "$input" == "y" ]] || [[ "$input" == "Y" ]]; then
 	echo "\e[32mDone"
 
 	echo "\e[32mInstall zsh configures"
-	ln -sv $DOTS/{.zshenv,.zsh_history} $HOME/
+	ln -sv $DOTS/.zshenv $HOME/
 	ln -sv $HOME/.config/zsh/.p10k.zsh $HOME/.p10k.zsh
 	echo "\e[32mDone"
 
