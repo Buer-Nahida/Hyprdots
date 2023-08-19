@@ -73,7 +73,7 @@ yay -S hyprland wlroots xdg-desktop-portal-hyprland xorg-xwayland \
         catppuccin-mocha-dark-cursors \
         mpd ncmpcpp \
         slurp \
-        clipman
+        cliphist
 ```
 </details>
 
