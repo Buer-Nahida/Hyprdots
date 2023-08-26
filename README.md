@@ -26,7 +26,7 @@
 <div align="center">
 
 # Install
-> **Waring**
+> **Warning**
 > 
 > **If you installed Hyprdots's main1.0 branch**   
 > **You must remove all old's configs to install main2.0 branch!!!**   
