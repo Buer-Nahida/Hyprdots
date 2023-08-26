@@ -128,10 +128,10 @@ sudo mv Afterglow-Recolored-Catppuccin-Blue-v3 /usr/share/icons/Afterglow-Recolo
 
 > **Warning**
 > 
-> Cursor directory name is very important!!!
-> Because `gtkthemes-bkp` script is using cursor directory name to apply cursor theme!!!
-> Hyprland is using cursor directory name to apply cursor theme too!!!
-> So you must rename `Afterglow-Recolored-Catppuccin-Blue-v3` to `Afterglow-Recolored-Catppuccin-Blue-v2`。
+> Cursor directory name is very important!!!   
+> Because `gtkthemes-bkp` script is using cursor directory name to apply cursor theme!!!   
+> Hyprland is using cursor directory name to apply cursor theme too!!!   
+> So you must rename `Afterglow-Recolored-Catppuccin-Blue-v3` to `Afterglow-Recolored-Catppuccin-Blue-v2`!!!   
 
 ## Install icon theme
 
