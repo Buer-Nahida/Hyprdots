@@ -23,15 +23,11 @@
 ![2023-08-19-05-37-22-full](https://github.com/SR-MyStar/Hyprdots/assets/139795416/9632b378-f866-4181-887a-150614d580c9)
 </div>
 
-<div align="center">
-
 # Install
 > **Warning**
 > 
 > **If you installed Hyprdots's main1.0 branch**   
 > **You must remove all old's configs to install main2.0 branch!!!**   
-
-</div>
 
 <details>
 <summary><b>1. Install packages</b></summary>
