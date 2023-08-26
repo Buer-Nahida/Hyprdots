@@ -73,7 +73,8 @@ yay -S hyprland wlroots xdg-desktop-portal-hyprland xorg-xwayland \
         catppuccin-mocha-dark-cursors \
         mpd ncmpcpp \
         slurp \
-        cliphist
+        cliphist \
+        wget aria2 curl
 ```
 </details>
 
@@ -121,8 +122,16 @@ rm -rv Tokyo-Night-GTK-Theme
 ## Install Cursor theme
 
 ```Bash
-yay -S catppuccin-cursors-mocha
+wget https://github.com/TeddyBearKilla/Afterglow-Cursors-Recolored/releases/download/Catppuccin/Afterglow-Recolored-Catppuccin-Blue-v3.tar.gz
+sudo mv Afterglow-Recolored-Catppuccin-Blue-v3 /usr/share/icons/Afterglow-Recolored-Catppuccin-Blue-v2
 ```
+
+> **Warning**
+> 
+> Cursor directory name is very important
+> Because ```gtkthemes-bkp``` script is using cursor directory name to apply cursor theme
+> Hyprland is using cursor directory name to apply cursor theme too
+> So you must rename Afterglow-Recolored-Catppuccin-Blue-v3 to Afterglow-Recolored-Catppuccin-Blue-v2
 
 ## Install icon theme
 
