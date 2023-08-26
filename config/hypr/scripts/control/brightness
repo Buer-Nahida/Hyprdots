@@ -1,68 +1,49 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+subinc=2
+subchange=$(echo "1 / $subinc" | bc -l)
+delay=0.001
+opt=""
 
-## Script To Manage Brightness For Archcraft (in Wayland).
 
-iDIR="$HOME/.config/hypr/icons"
+getIcon() {
+    if [ "$1" -eq 0 ]; then
+        echo "$HOME/.icons/tmp/brightness-off.svg"
+    elif [ "$1" -lt 33 ]; then
+        echo "$HOME/.icons/tmp/brightness-low.svg"
+    elif [ "$1" -lt 66 ]; then
+        echo "$HOME/.icons/tmp/brightness-medium.svg"
+    else
+        echo "$HOME/.icons/tmp/brightness-high.svg"
+    fi
 
-# Get brightness
-get_backlight() {
-	LIGHT=$(printf "%.0f\n" $(light -G))
-	echo "${LIGHT}%"
 }
 
-# Get icons
-get_icon() {
-	backlight="$(get_backlight)"
-	current="${backlight%%%}"
-	if [[ ("$current" -ge "0") && ("$current" -le "10") ]]; then
-		icon="$iDIR/b0.png"
-	elif [[ ("$current" -ge "10") && ("$current" -le "20") ]]; then
-		icon="$iDIR/b10.png"
-	elif [[ ("$current" -ge "20") && ("$current" -le "30") ]]; then
-		icon="$iDIR/b20.png"
-	elif [[ ("$current" -ge "30") && ("$current" -le "40") ]]; then
-		icon="$iDIR/b30.png"
-	elif [[ ("$current" -ge "40") && ("$current" -le "50") ]]; then
-		icon="$iDIR/b40.png"
-	elif [[ ("$current" -ge "50") && ("$current" -le "60") ]]; then
-		icon="$iDIR/b50.png"
-	elif [[ ("$current" -ge "60") && ("$current" -le "70") ]]; then
-		icon="$iDIR/b60.png"
-	elif [[ ("$current" -ge "70") && ("$current" -le "80") ]]; then
-		icon="$iDIR/b70.png"
-	elif [[ ("$current" -ge "80") && ("$current" -le "90") ]]; then
-		icon="$iDIR/b80.png"
-	elif [[ ("$current" -ge "90") && ("$current" -le "100") ]]; then
-		icon="$iDIR/b90.png"
-	elif [[ ("$current" -ge "100") && ("$current" -le "100") ]]; then
-		icon="$iDIR/b100.png"
-	fi
-}
-
-# Notify
-notify_user() {
-	notify-send -h string:x-canonical-private-synchronous:sys-notify -i "$icon" "亮度 : $(get_backlight)"
-}
-
-# Increase brightness
-inc_backlight() {
-	light -A 5 && get_icon && notify_user
-}
-
-# Decrease brightness
-dec_backlight() {
-	light -U 5 && get_icon && notify_user
-}
-
-# Execute accordingly
-if [[ "$1" == "--get" ]]; then
-	get_backlight
-elif [[ "$1" == "--inc" ]]; then
-	inc_backlight
-elif [[ "$1" == "--dec" ]]; then
-	dec_backlight
+if [ "$1" == "inc" ]; then
+    opt="-A"
 else
-	get_backlight
+    opt="-U"
 fi
+
+
+for i in $(seq $2); do
+    current=$(light)
+    truncated=$(echo "$current" | cut -d '.' -f1)
+
+    if (( $(echo "$current==0" | bc -l) )) && [ "$opt" == "-U" ]; then
+        exit 0;
+    elif (( $(echo "$current==100" | bc -l) )) && [ "$opt" == "-A"  ]; then
+        exit 0;
+    fi
+
+    for i in $(seq $subinc); do
+        light $opt "$subchange"
+        sleep "$delay"
+    done
+        
+    current=$(light)
+    truncated=$(echo "$current" | cut -d '.' -f1)
+
+    
+    dunstify "Brightness at ${truncated}%" -i $(getIcon "$truncated") -a Backlight -u normal -h "int:value:$current" -h string:x-dunst-stack-tag:backlight
+done

@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+
+#  █████╗ ██╗   ██╗████████╗ ██████╗     ███████╗████████╗ █████╗ ██████╗ ████████╗
+# ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗    ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝
+# ███████║██║   ██║   ██║   ██║   ██║    ███████╗   ██║   ███████║██████╔╝   ██║
+# ██╔══██║██║   ██║   ██║   ██║   ██║    ╚════██║   ██║   ██╔══██║██╔══██╗   ██║
+# ██║  ██║╚██████╔╝   ██║   ╚██████╔╝    ███████║   ██║   ██║  ██║██║  ██║   ██║
+# ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝     ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
+
+# variables
+config=$HOME/.config/hypr
+scripts=$config/scripts
+
+# Cursor
+hyprctl setcursor "Afterglow-Recolored-Catppuccin-Blue-v2" 32
+#hyprctl setcursor oreo_spark_light_pink_cursors 24
+# notification daemon
+dunst &
+
+fcitx5 -d &
+
+# waybar
+$scripts/waybar/waybar.sh &
+
+# wallpaper
+#mpvpaper HDMI-A-1 -p -s ~/.config/hypr/wallpaper/chino.mp4 -o " --loop --no-audio " -f &
+$scripts/waybar/wall $config/wallpaper/images/1.png
+
+# other
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+
+wl-paste --type text --watch cliphist store & #Stores only text data
+
+wl-paste --type image --watch cliphist store & #Stores only image data

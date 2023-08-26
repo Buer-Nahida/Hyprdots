@@ -1,4 +1,0 @@
-#!/bin/sh
-Name="$(date "+%Y-%m-%d-%H-%M-%S")"
-grim -c -t png -g "$(slurp -d -b "#00000000" -c "#F4C6D1FF" -s "#00000044")" ~/Pictures/Screenshots/"${Name}"-area.png
-notify-send -h string:x-canonical-private-synchronous:sys-notify -i ~/Pictures/Screenshots/"${Name}"-area.png "$(python3 ~/.config/hypr/scripts/ramdomtext.py)"

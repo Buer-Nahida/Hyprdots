@@ -1,0 +1,137 @@
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 20px;
+  padding: 1px 5px 0px 5px;
+  border-radius: 5px;
+}
+
+window#waybar {
+  background: rgba(0,0,0,0);
+}
+
+#custom-launcher {
+  font-size: 20px;
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  padding: 0px 12px 0px 4px;
+  margin: 0px;
+}
+
+#cpu {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+}
+
+#memory {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+}
+
+#temperature {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+}
+
+#custom-pacman-update {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  margin: 0px 0px 0px 10px;
+}
+
+#workspaces{
+    background-color: transparent;
+    padding: 0px 0px 0px 0px;
+    font-size: 20;
+}
+
+#workspaces button{
+    color: #FFFFFF;
+    background: rgba(0,0,0,0);
+    padding: 0px 0px 0px 0px;
+    font-size: 20;
+}
+
+#window {
+  background: rgba(0,0,0,0);
+  color: #FFFFFF;
+}
+
+#workspaces button.active{
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  padding: 0px 0px 0px 0px;
+  font-size: 20;
+}
+
+#battery {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  margin: 0px 5px 0px 5px;
+}
+
+#backlight {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  margin: 0px 5px 0px 0px;
+}
+
+#pulseaudio {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  margin: 0px 5px 0px 0px;
+}
+
+#network {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  margin: 0px 0px 0px 0px;
+}
+
+#clock {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  margin: 0px 5px 0px 0px;
+}
+
+#tray {
+    background-color: rgba(0,0,0,0);
+    padding: 0px 0px 0px 0px;
+    border: 0px;
+    font-size: 16px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+    padding: 0px 0px 0px 0px;
+    border: 0px;
+    font-size: 16px;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(0,0,0,0);
+    padding: 0px 0px 0px 0px;
+    border: 0px;
+    font-size: 16px;
+}
+
+#custom-power-menu {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  margin: 0px 0px 0px 5px;
+  padding: 0px 12px 0px 10px
+}
+
+#cava {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  font-family: "3270 Nerd Font Mono";
+}
+
+#bluetooth {
+  color: #FFFFFF;
+  background: rgba(0,0,0,0);
+  margin: 0px 5px 0px 0px;
+}
+
+/*# sourceMappingURL=style.css.map */

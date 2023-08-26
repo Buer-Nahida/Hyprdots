@@ -1,5 +1,5 @@
 #!/bin/bash
-slurp -d -b "#00000000" -c "#F4C6D1FF" -s "#00000044" -f "hyprctl keyword windowrule unset, areaterm
+slurp -d -b "#00000000" -c "#82AAFFFF" -s "#00000044" -f "hyprctl keyword windowrule unset, areaterm
 hyprctl keyword windowrule animation popin, areaterm
 hyprctl keyword windowrule move %x %y, areaterm
 hyprctl keyword windowrule float, areaterm

@@ -1,8 +1,0 @@
-#!/bin/sh
-sleep 1
-Name="$(date "+%Y-%m-%d-%H-%M-%S")"
-grim -c -t png -g "$(
-	echo -n $(hyprctl activewindow | grep at: | awk -F ': ' '{print $2}')
-	hyprctl activewindow | grep size | awk -F ': ' '{print $2}' | awk -F ',' '{print " "$1"x"$2}'
-)" ~/Pictures/Screenshots/"${Name}"-window.png
-notify-send -h string:x-canonical-private-synchronous:sys-notify -i ~/Pictures/Screenshots/"${Name}"-window.png "$(python3 ~/.config/hypr/scripts/ramdomtext.py)"

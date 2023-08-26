@@ -1,158 +1,146 @@
 [{
-  "layer": "top",
-  "height": 33,
-  "margin-top": 0,
-  "margin-left": 0,
-  "margin-bottom": -15,
-  "margin-right": 0,
-  "spacing": 0,
-
-    "wlr/workspaces": {
-        "format": "{icon}",
-        "format-active": "{icon}",
-				"on-click": "activate",
-				"format-icons": {
-							"urgent": "!",
-		          "active": "●",
-							"default": "○",
-			  },
-        //     "10":"10"
-        // }
-    },
-
-  "modules-left": [
+  "layer" : "top",
+  "position" : "top",
+  "modules-left" : [
+//  "custom/launcher",
     "wlr/workspaces",
-  ],
-
-  "modules-center": [
-    "clock"
-  ],
-
-  "modules-right": [
-        "battery",
-        "pulseaudio",
-  ],
-
-  "clock": {
-    "format": "<b>{:%Y年%m月%d日 %H:%M:%S %A}</b>",
-    "interval": 1,
-    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "~/.config/hypr/scripts/waybar/cycle.sh"
-  },
-
-  "backlight": {
-    "device": "amdgpu_bl1",
-    "format": "{icon} <b>{percent}</b>",
-    "tooltip": false,
-    "format-icons": ["", "", ""]
-  },
-
-  "pulseaudio": {
-    "format": "<b> {volume}</b>",
-    "format-bluetooth": "<b> 󰂯{volume}</b>",
-    "format-bluetooth-muted": "<b>󰂲 {volume}</b>",
-    "tooltip": false,
-    "format-muted": "<b> 󰝟 {volume}</b>",
-    "on-click": "pavucontrol"
-  }
-}, 
-
-{
-  "layer": "top",
-  "position": "bottom",
-  "height": 20,
-  "margin-top": -15,
-  "margin-left": 0,
-  "margin-bottom": 0,
-  "margin-right": 0,
-  "spacing": 0,
-
-  "modules-left": [
-  	"memory",
-    "cpu",
     "temperature",
+    "memory",
+    "cpu",
   ],
-
-"cava": {
-//        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+  "modules-center" : [
+    "clock",
+  ],
+  "modules-right" : [
+    "cava",
+//  "custom/wall",
+    "mpd",
+    "pulseaudio",
+    "backlight",
+//  "network"
+    "battery",
+    "tray",
+  ],
+  "custom/launcher" : {
+    "format" : " ",
+    "on-click" : "~/.config/hypr/scripts/rofi/launcher",
+    "tooltip" : false,
+  },
+  "custom/wall" : {
+    "on-click" : "~/.config/hypr/scripts/waybar/cycle.sh",
+    "format" : " 󰠖 ",
+    "tooltip" : false,
+  },
+  "cava": {
+//      "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
         "framerate": 60,
         "autosens": 1,
-        "bars": 150,
+        "bars": 10,
         "method": "pipewire",
         "source": "auto",
         "bar_delimiter": 0,
         "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
     },
-
-  "modules-center": [
-    "cava"
-  ],
-
-  "modules-right": [
-    "tray"
-  ],
-
-  "cpu": {
-    "interval": 1,
-    "format": " <b>{usage}%</b>",
+  "wlr/workspaces" : {
+    "format" : "{icon}",
+    "on-click" : "activate",
+    "on-scroll-up" : "hyprctl dispatch workspace e+1",
+    "on-scroll-down" : "hyprctl dispatch workspace e-1",
   },
-
-  "memory": {
-    "interval": 1,
-    "format": " <b>{}%</b>",
-    "format-alt": " <b>{used}GiB</b>",
-  },
-
-  "temperature": {
-    "interval": 1,
-    "thermal-zone": 0,
-    "critical-threshold": 80,
-    "format-critical": " {temperatureC}°C</b>",
-    "format": " <b>{temperatureC}°C</b>"
-  },
-
-"wlr/workspaces": {
-	"format": "{icon}{name}",
-	"format-icons": {
-		"active": "●",
-		"default": "○"
-	},
-},
-
-  "tray": {
-    "icon-size": 20,
-    "spacing": 10
-  },
-
-  "battery": {
-    "bat": "BAT0",
-    "interval": 30,
-    "states": {
-      "warning": 30,
-      "critical": 15
+  "idle_inhibitor" : {
+    "format" : "{icon}",
+    "format-icons" : {
+    "activated" : "",
+    "deactivated" : "",
     },
-    "format": "<b>{icon} {capacity}%</b>",
-    "format-charging": "<b>{icon}⚡{capacity}%</b>",
-    "format-icons": [" ", " ", " ", " "],
-    "max-length": 25,
-    "tooltip": false
+    "tooltip" : false,
   },
-
-  "network": {
-    "format-wifi": "<b> {essid}</b>",
-    "format-ethernet": "",
-    "tooltip": false,
-    "on-click": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh", 
-    "format-disconnected": "<b><󱚼/b>"
+  "backlight" : {
+    "device" : "intel_backlight",
+    "on-scroll-up" : "light -A 5",
+    "on-scroll-down" : "light -U 5",
+    "format" : "{icon} {percent}%",
+    "format-icons" : [ "󰃝", "󰃞", "󰃟", "󰃠", ],
   },
-
-  "bluetooth": {
-    "format": "<b></b>",
-    "format-connected": "<b> {device_alias}</b>",
-    "format-disabled": "<b></b>",
-    "interval": 30,
-    "on-click" : "blueman-manager",
-    "tooltip": false,
-    }
-
-}]
+  "pulseaudio" : {
+    "scroll-step" : 1,
+    "format" : "{icon} {volume}%",
+    "format-muted" : "󰖁 Muted",
+    "format-icons" : {
+    "default" : [ "", "", "", ],
+    },
+    "on-click" : "pavucontrol",
+    "on-click-right" : "~/.config/hypr/scripts/control/volume --toggle",
+    "tooltip" : false,
+  },
+  "battery" : {
+    "interval" : 10,
+    "states" : {
+    "warning" : 20,
+    "critical" : 10,
+    },
+    "format" : "{icon} {capacity}%",
+    "format-icons" : [ "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹", ],
+    "format-full" : "{icon} {capacity}%",
+    "format-charging" : "󰂄 {capacity}%",
+    "tooltip" : false,
+  },
+  "clock" : {
+    "interval" : 1,
+    "on-click" : "~/.config/hypr/scripts/waybar/cycle.sh",
+    "format" : "<b>{:%Y年%m月%d日 %H:%M:%S %A}</b>",
+    "tooltip" : true,
+    "tooltip-format" : "<big>{:%Y年%b%d日}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  "memory" : {
+    "interval" : 1,
+    "format" : " {percentage}%",
+    "on-click" : "wezterm --config-file ~/.config/wezterm/float.lua start --class floatwezterm btm -e --default_widget_type proc",
+    "states" : {
+      "warning" : 85,
+    },
+  },
+  "cpu" : {
+    "interval" : 1,
+    "on-click" : "wezterm --config-file ~/.config/wezterm/float.lua start --class floatwezterm btm -e --default_widget_type cpu",
+    "format" : " {usage}%",
+  },
+  "mpd" : {
+    "max-length" : 25,
+    "format" : " {title}",
+    "format-paused" : " {title}",
+    "format-stopped" : "",
+    "format-disconnected" : "",
+    "on-click" : "wezterm --config-file ~/.config/wezterm/float.lua start --class floatwezterm ncmpcpp ",
+    "on-scroll-up" : "mpc --quiet prev",
+    "on-scroll-down" : "mpc --quiet next",
+    "smooth-scrolling-threshold" : 5,
+    "tooltip-format" : "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})",
+  },
+  "network" : {
+    "format-disconnected" : "󰯡 Disconnected",
+    "format-ethernet" : "󰀂 {ifname} ({ipaddr})",
+    "format-linked" : "󰖪 {essid} (No IP)",
+    "format-wifi" : "󰖩 {essid}",
+    "interval" : 1,
+    "on-click" : "wezterm --config-file ~/.config/wezterm/float.lua start --class floatwezterm btm -e --default_widget_type net",
+    "tooltip" : false,
+  },
+  "temperature" : {
+    "interval" : 1,
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "on-click" : "wezterm --config-file ~/.config/wezterm/float.lua start --class floatwezterm btm -e --default_widget_type temp",
+    "tooltip" : true,
+    "format" : " {temperatureC}°C",
+  },
+  "custom/powermenu" : {
+    "format" : "",
+    "on-click" : "~/.config/hypr/scripts/rofi/powermenu",
+    "tooltip" : false,
+  },
+  "tray" : {
+    "icon-size" : 15,
+    "spacing" : 5,
+  },
+}],

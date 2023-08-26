@@ -72,6 +72,29 @@ confirm_run() {
 	fi
 }
 
+screen_locker() {
+	swaylock \
+		--screenshots \
+		--indicator \
+		--clock \
+		--inside-wrong-color 000000 \
+		--ring-wrong-color 11111b \
+		--inside-clear-color a6e3a1 \
+		--ring-clear-color 11111b \
+		--inside-ver-color 89b4fa \
+		--ring-ver-color 11111b \
+		--text-color f5c2e7 \
+		--indicator-radius 80 \
+		--indicator-thickness 5 \
+		--effect-vignette 0.5:0.5 \
+		--ring-color 11111b \
+		--key-hl-color f5c2e7 \
+		--line-color 313244 \
+		--inside-color 00000000 \
+		--separator-color 00000000 \
+		--fade-in 0.1 &
+}
+
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
@@ -79,7 +102,7 @@ run_cmd() {
 	elif [[ "$1" == '--opt2' ]]; then
 		confirm_run 'hyprctl dispatch exit'
 	elif [[ "$1" == '--opt3' ]]; then
-		betterlockscreen --lock
+		screen_locker
 	elif [[ "$1" == '--opt4' ]]; then
 		confirm_run 'systemctl reboot'
 	elif [[ "$1" == '--opt5' ]]; then

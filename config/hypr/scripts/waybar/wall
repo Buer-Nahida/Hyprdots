@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 swww init
-swww img $1 --transition-type grow --transition-pos "$(hyprctl cursorpos | grep ,)" --transition-duration 3
+swww img $1 --transition-type outer --transition-pos "$(hyprctl cursorpos | awk -F ', ' '{print $1}'), $(hyprctl cursorpos | awk -F ', ' '{print 1079-$2}')" --transition-duration 3

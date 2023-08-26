@@ -8,7 +8,7 @@ RASI="$DIR/screenshot.rasi"
 
 # Theme Elements
 prompt='Screenshot'
-mesg="Directory :: $(xdg-user-dir PICTURES)/Screenshots"
+mesg="Directory:$(xdg-user-dir PICTURES)/Screenshots"
 
 # Options
 layout=$(cat ${RASI} | grep 'USE_ICON' | cut -d'=' -f2)
@@ -40,83 +40,40 @@ run_rofi() {
 	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
 }
 
-# Screenshot
-time=$(date +%Y-%m-%d-%H-%M-%S)
-geometry=$(xrandr | grep 'current' | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current')
-dir="$(xdg-user-dir PICTURES)/Screenshots"
-file="Screenshot_${time}_${geometry}.png"
+# Image Name
+Name="$(date "+%Y-%m-%d-%H-%M-%S")"
 
-# Directory
-if [[ ! -d "$dir" ]]; then
-	mkdir -p "$dir"
-fi
-
-# notify and view screenshot
-notify_view() {
-	notify_cmd_shot='dunstify -u low -h string:x-dunst-stack-tag:obscreenshot -i /usr/share/archcraft/icons/dunst/picture.png'
-	${notify_cmd_shot} "Copied to clipboard."
-	paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga &>/dev/null &
-	viewnior ${dir}/"$file"
-	if [[ -e "$dir/$file" ]]; then
-		${notify_cmd_shot} "Screenshot Saved."
-	else
-		${notify_cmd_shot} "Screenshot Deleted."
-	fi
+# Screenshot Mode
+screenshot_full() {
+	grim -c -t png ~/Pictures/Screenshots/"${Name}"-full.png
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -i ~/Pictures/Screenshots/"${Name}"-full.png -a "$(python3 ~/.config/hypr/scripts/ramdomtext.py)" " "
 }
 
-# Copy screenshot to clipboard
-copy_shot() {
-	tee "$file" | xclip -selection clipboard -t image/png
+screenshot_area() {
+	grim -c -t png -g "$(slurp -d -b "#00000000" -c "#82AAFFFF" -s "#00000044" && sleep 0.7)" ~/Pictures/Screenshots/"${Name}"-area.png
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -i ~/Pictures/Screenshots/"${Name}"-area.png -a "$(python3 ~/.config/hypr/scripts/ramdomtext.py)" " "
 }
 
-# countdown
-countdown() {
-	for sec in $(seq $1 -1 1); do
-		dunstify -t 1000 -h string:x-dunst-stack-tag:screenshottimer -i /usr/share/archcraft/icons/dunst/timer.png "Taking shot in : $sec"
-		sleep 1
-	done
-}
-
-# take shots
-shotnow() {
-	cd ${dir} && sleep 0.5 && maim -u -f png | copy_shot
-	notify_view
-}
-
-shot5() {
-	countdown '5'
-	sleep 1 && cd ${dir} && maim -u -f png | copy_shot
-	notify_view
-}
-
-shot10() {
-	countdown '10'
-	sleep 1 && cd ${dir} && maim -u -f png | copy_shot
-	notify_view
-}
-
-shotwin() {
-	cd ${dir} && maim -u -f png -i $(xdotool getactivewindow) | copy_shot
-	notify_view
-}
-
-shotarea() {
-	cd ${dir} && maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | copy_shot
-	notify_view
+screenshot_window() {
+	grim -c -t png -g "$(
+		echo -n $(hyprctl activewindow | grep at: | awk -F ': ' '{print $2}')
+		hyprctl activewindow | grep size | awk -F ': ' '{print $2}' | awk -F ',' '{print " "$1"x"$2}'
+	)" ~/Pictures/Screenshots/"${Name}"-window.png
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -i ~/Pictures/Screenshots/"${Name}"-window.png -a "$(python3 ~/.config/hypr/scripts/ramdomtext.py)" " "
 }
 
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
-		~/.config/hypr/scripts/screenshot/full
+		sleep 0.7 && screenshot_full
 	elif [[ "$1" == '--opt2' ]]; then
-		~/.config/hypr/scripts/screenshot/area
+		screenshot_area
 	elif [[ "$1" == '--opt3' ]]; then
-		~/.config/hypr/scripts/screenshot/window
+		sleep 0.7 && screenshot_window
 	elif [[ "$1" == '--opt4' ]]; then
-		sleep 5 && ~/.config/hypr/scripts/screenshot/full
+		sleep 5 && screenshot_full
 	elif [[ "$1" == '--opt5' ]]; then
-		sleep 10 && ~/.config/hypr/scripts/screenshot/full
+		sleep 10 && screenshot_full
 	fi
 }
 
