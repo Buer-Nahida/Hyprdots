@@ -8,7 +8,7 @@
 
 <p align="center">
 
-> [!WARMING]
+> [!WARNING]
 >
 > # **Move to [0xNahida/flake](https://github.com/0xNahida/flake)**
   <img src="https://img.shields.io/badge/OS-Arch-f7768e?style=for-the-badge&logo=archlinux&logoColor=f7768e"/>
