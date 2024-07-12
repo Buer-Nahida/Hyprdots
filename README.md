@@ -7,6 +7,10 @@
 ```
 
 <p align="center">
+
+> [!WARMING]
+>
+> # **Move to [0xNahida/flake](https://github.com/0xNahida/flake)**
   <img src="https://img.shields.io/badge/OS-Arch-f7768e?style=for-the-badge&logo=archlinux&logoColor=f7768e"/>
   <img src="https://img.shields.io/badge/Style-SHELL-9ece6a?style=for-the-badge&logo=gnubash&logoColor=9ece6a"/>
   <img src="https://img.shields.io/github/stars/SR-MyStar/Hyprdots?style=for-the-badge&logo=apachespark&logoColor=e0af68&color=e0af68" />
